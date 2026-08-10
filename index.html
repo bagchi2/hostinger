@@ -3019,16 +3019,15 @@
       height: 1em;
       vertical-align: middle;
     }
-    </style>
-
-    /* Desktop rendering optimization: keep large below-fold blocks out of the
-       initial rendering pipeline until they are close to the viewport. */
-    @media (min-width: 1024px) {
-      #article-content, #faq-section, #sidebar {
-        content-visibility: auto;
-        contain-intrinsic-size: 900px;
+      /* Desktop rendering optimization: keep large below-fold blocks out of the
+         initial rendering pipeline until they are close to the viewport. */
+      @media (min-width: 1024px) {
+        #article-content, #faq-section, #sidebar {
+          content-visibility: auto;
+          contain-intrinsic-size: 900px;
+        }
       }
-    }
+    </style>
   </head>
   <body class="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans flex flex-col selection:bg-purple-600 selection:text-white transition-colors duration-300">
 
