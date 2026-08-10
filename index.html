@@ -2992,14 +2992,21 @@
     }
     .animate-fadeIn { animation: fadeIn 0.2s ease-out; }
     [data-scroll-hide]::-webkit-scrollbar { display: none; }
+    /* Performance + CLS protection: reserve space for JS-rendered sections before their content is injected. */
+    #savings-calculator { min-height: 150px; }
+    #coupon-list { min-height: 1700px; }
+    #pricing-plans-section { min-height: 2200px; }
+    #review-highlights { min-height: 620px; }
+    #article-content { min-height: 3000px; }
+    #faq-section { min-height: 1500px; }
+    #sidebar { min-height: 900px; }
 
-    /* Performance-only rendering containment; visual styles remain unchanged. */
-    #pricing-plans-section, #review-highlights, #article-content, #faq-section {
+    /* Keep below-fold rendering optimization while reserving enough intrinsic space to prevent layout shifts. */
+    #article-content, #faq-section {
       content-visibility: auto;
-      contain-intrinsic-size: 1px 900px;
+      contain-intrinsic-size: 1px 3000px;
     }
-
-    @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
       .glow-effect, .animate-fadeIn, .animate-pulse, .animate-bounce {
         animation-duration: 0.001ms !important;
       }
@@ -3019,13 +3026,14 @@
       height: 1em;
       vertical-align: middle;
     }
-    /* Desktop rendering optimization: keep large below-fold blocks out of the
-       initial rendering pipeline until they are close to the viewport. */
+    /* Desktop: preserve layout space for dynamic sections so Lighthouse does not record large shifts. */
     @media (min-width: 1024px) {
-      #article-content, #faq-section, #sidebar {
-        content-visibility: auto;
-        contain-intrinsic-size: 900px;
-      }
+      #coupon-list { min-height: 1700px; }
+      #pricing-plans-section { min-height: 2200px; }
+      #review-highlights { min-height: 620px; }
+      #article-content { min-height: 3000px; }
+      #faq-section { min-height: 1500px; }
+      #sidebar { min-height: 900px; }
     }
     </style>
   </head>
