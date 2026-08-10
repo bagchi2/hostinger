@@ -2994,7 +2994,7 @@
     [data-scroll-hide]::-webkit-scrollbar { display: none; }
 
     /* Performance-only rendering containment; visual styles remain unchanged. */
-    #pricing-plans-section, #review-highlights, #article-content, #faq-section {
+    #article-content, #faq-section {
       content-visibility: auto;
       contain-intrinsic-size: 1px 900px;
     }
@@ -3022,7 +3022,7 @@
       /* Desktop rendering optimization: keep large below-fold blocks out of the
          initial rendering pipeline until they are close to the viewport. */
       @media (min-width: 1024px) {
-        #article-content, #faq-section, #sidebar {
+        #article-content, #faq-section {
           content-visibility: auto;
           contain-intrinsic-size: 900px;
         }
@@ -4842,19 +4842,31 @@ const FAQS = [
     }, 1000);
 
     /* =========================================================
-       INITIAL RENDER
+       INITIAL RENDER — performance-safe staged rendering
+       Keeps the approved UI/functions intact while preventing the
+       large below-fold DOM from blocking the first desktop paint.
        ========================================================= */
     renderCategoryPills();
     renderSavingsCalculator();
     renderCouponList();
     renderPricingPlans();
-    renderReviewHighlights();
-    renderArticleContent();
-    renderFAQSection();
     renderSidebar();
-    renderFooter();
     updateDarkToggleIcon();
     refreshIcons();
+
+    const renderNonCriticalSections = () => {
+      renderReviewHighlights();
+      renderArticleContent();
+      renderFAQSection();
+      renderFooter();
+      refreshIcons();
+    };
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(renderNonCriticalSections, { timeout: 1200 });
+    } else {
+      setTimeout(renderNonCriticalSections, 80);
+    }
     
 
     /* =========================================================
