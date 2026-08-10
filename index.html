@@ -21,6 +21,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="https://www.hostinger.com/favicon.ico" type="image/x-icon" />
+    <link rel="preload" as="image" href="https://bagchi.in/assets/img/hostinger/1.webp" fetchpriority="high" />
 
     <!-- Primary Theme Color -->
     <meta name="theme-color" content="#4A21C4" />
@@ -3019,6 +3020,15 @@
       vertical-align: middle;
     }
     </style>
+
+    /* Desktop rendering optimization: keep large below-fold blocks out of the
+       initial rendering pipeline until they are close to the viewport. */
+    @media (min-width: 1024px) {
+      #article-content, #faq-section, #sidebar {
+        content-visibility: auto;
+        contain-intrinsic-size: 900px;
+      }
+    }
   </head>
   <body class="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans flex flex-col selection:bg-purple-600 selection:text-white transition-colors duration-300">
 
@@ -3199,8 +3209,24 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js" defer></script>
-    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js" defer></script>
+    <script>
+      /* Performance: non-critical libraries are loaded only when their approved
+         functionality is actually needed. Their original URLs and behavior remain intact. */
+      window.__loadExternalScript = function(src, globalName) {
+        return new Promise(function(resolve) {
+          if (globalName && window[globalName]) return resolve(window[globalName]);
+          var existing = document.querySelector('script[data-lazy-src="' + src + '"]');
+          if (existing) { existing.addEventListener('load', function(){ resolve(globalName ? window[globalName] : true); }, {once:true}); return; }
+          var script = document.createElement('script');
+          script.src = src;
+          script.async = true;
+          script.dataset.lazySrc = src;
+          script.onload = function(){ resolve(globalName ? window[globalName] : true); };
+          script.onerror = function(){ resolve(null); };
+          document.head.appendChild(script);
+        });
+      };
+    </script>
 
     <script>
     /* Performance: external libraries are deferred above.
@@ -3323,12 +3349,21 @@ const FAQS = [
       return String(str).replace(/[&<>"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
     }
 
+    let iconRefreshQueued = false;
     function refreshIcons() {
-      if (window.lucide) window.lucide.createIcons();
+      if (iconRefreshQueued) return;
+      iconRefreshQueued = true;
+      requestAnimationFrame(() => {
+        iconRefreshQueued = false;
+        if (window.lucide) window.lucide.createIcons();
+      });
     }
 
     function fireConfetti(opts) {
-      if (window.confetti) window.confetti(opts);
+      if (window.confetti) { window.confetti(opts); return; }
+      if (window.__loadExternalScript) {
+        window.__loadExternalScript('https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js', 'confetti').then(function(fn){ if (fn) fn(opts); });
+      }
     }
 
     function copyAndVisit(code, link, delay) {
@@ -4726,7 +4761,7 @@ const FAQS = [
       }
       function animateScroll(currentTime) {
         const deltaTime = currentTime - lastTime;
-        if (deltaTime >= 16) {
+        if (deltaTime >= 33) {
           if (!isPaused && isVisible && container) {
             // Content is rendered as two identical back-to-back sets, so once
             // we've scrolled past exactly one set's width, silently shift back
@@ -4736,7 +4771,7 @@ const FAQS = [
             if (container.scrollLeft >= singleSetWidth) {
               container.scrollLeft -= singleSetWidth;
             } else {
-              container.scrollLeft += 0.6;
+              container.scrollLeft += 1.2;
             }
           }
           lastTime = currentTime;
@@ -4757,23 +4792,33 @@ const FAQS = [
        INIT: Lenis smooth scroll
        ========================================================= */
     (function setupLenis() {
-      if (typeof Lenis === 'undefined') return;
-      const lenis = new Lenis({
-        duration: 1.6,
-        easing: (t) => 1 - Math.pow(1 - t, 2),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        smoothTouch: false,
-        mouseMultiplier: 0.9,
-        touchMultiplier: 1.5,
-        infinite: false
-      });
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
+      let started = false;
+      function startLenis() {
+        if (started) return;
+        started = true;
+        const init = function() {
+          if (typeof Lenis === 'undefined') return;
+          const lenis = new Lenis({
+            duration: 1.6,
+            easing: (t) => 1 - Math.pow(1 - t, 2),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            smoothTouch: false,
+            mouseMultiplier: 0.9,
+            touchMultiplier: 1.5,
+            infinite: false
+          });
+          function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
+        };
+        if (typeof Lenis !== 'undefined') init();
+        else if (window.__loadExternalScript) window.__loadExternalScript('https://unpkg.com/lenis@1.3.26/dist/lenis.min.js', 'Lenis').then(init);
       }
-      requestAnimationFrame(raf);
+      ['wheel','touchstart','keydown'].forEach(function(type){ window.addEventListener(type, startLenis, {passive:true, once:true}); });
     })();
 
     /* =========================================================
