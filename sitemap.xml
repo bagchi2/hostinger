@@ -1,0 +1,18 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://hostingercoupon.net/</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+
+    <!-- Hostinger Coupon Argentina -->
+    <url>
+        <loc>https://hostingercoupon.net/cupom-de-descuento-hostinger-argentina</loc>
+        <lastmod>2026-08-13</lastmod>
+    </url>
+
+</urlset>
+```
