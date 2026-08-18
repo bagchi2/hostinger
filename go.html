@@ -1,186 +1,207 @@
 <!DOCTYPE html>
-<!--
-==========================================================
-Affiliate Redirect System
-Version: 1.1
-Redirect Type: 307 Temporary Redirect (Browser Redirect)
-
-Website:
-https://hostingercoupon.net
-
-==========================================================
-
-HOW TO USE
-
-https://hostingercoupon.net/go.html?id=hostinger
-
-==========================================================
-
-HOW TO ADD A NEW AFFILIATE LINK
-
-1. Add a new line inside the links object.
-
-Example:
-
-newhost: "https://example.com/your-affiliate-link",
-
-2. Open it like:
-
-https://hostingercoupon.net/go.html?id=newhost
-
-==========================================================
-
-NOTE
-
-This is a CLIENT-SIDE redirect.
-
-If you require a true HTTP 307 status code, it must be
-performed by the server (Cloudflare Worker, Apache,
-Nginx, etc.). JavaScript cannot send an HTTP 307 response.
-
-==========================================================
--->
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Redirecting...</title>
+    <meta name="robots"
+          content="noindex, nofollow, noarchive">
 
-<meta name="robots" content="noindex,nofollow">
+    <meta name="referrer"
+          content="strict-origin-when-cross-origin">
 
-<style>
+    <title>Redirecting…</title>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
-}
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
 
-body{
-    background:#f5f7fb;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-}
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+        }
 
-.card{
-    width:92%;
-    max-width:500px;
-    background:#fff;
-    padding:40px;
-    border-radius:14px;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-    text-align:center;
-}
+        body {
+            min-height: 100vh;
+            min-height: 100svh;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            background: #f5f7fb;
+            color: #1f2937;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
 
-.loader{
-    width:70px;
-    height:70px;
-    margin:auto;
-    border-radius:50%;
-    border:6px solid #e8e8e8;
-    border-top:6px solid #0d6efd;
-    animation:spin 1s linear infinite;
-    margin-bottom:25px;
-}
+        .card {
+            width: min(100%, 500px);
+            padding: 40px 30px;
+            text-align: center;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
 
-@keyframes spin{
-    100%{
-        transform:rotate(360deg);
-    }
-}
+        .loader {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            border: 5px solid #e8e8e8;
+            border-top-color: #0d6efd;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
 
-h1{
-    font-size:28px;
-    margin-bottom:12px;
-}
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(24px, 5vw, 30px);
+            line-height: 1.2;
+        }
 
-p{
-    color:#666;
-    line-height:1.7;
-}
+        p {
+            margin: 0;
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
 
-small{
-    display:block;
-    margin-top:20px;
-    color:#888;
-}
+        small {
+            display: block;
+            margin-top: 18px;
+            color: #888;
+            font-size: 13px;
+        }
 
-.error{
-    color:#dc3545;
-    font-weight:bold;
-}
+        .error {
+            color: #dc3545;
+            font-weight: 700;
+        }
 
-</style>
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
+        @media (prefers-reduced-motion: reduce) {
+            .loader {
+                animation: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="card">
+<main class="card" aria-live="polite">
 
-<div class="loader" id="loader"></div>
+    <div
+        class="loader"
+        id="loader"
+        role="status"
+        aria-label="Redirecting">
+    </div>
 
-<h1 id="title">Redirecting...</h1>
+    <h1 id="title">Redirecting…</h1>
 
-<p id="message">
-Please wait while we securely redirect you.
-</p>
+    <p id="message">
+        Please wait while we securely redirect you.
+    </p>
 
-<small id="status">
-Loading...
-</small>
+    <small id="status">
+        Preparing redirect…
+    </small>
 
-</div>
+</main>
 
 <script>
+(() => {
+    "use strict";
 
-/* ==========================================================
-   AFFILIATE LINKS
-   ========================================================== */
+    /*
+     * ==========================================================
+     * AFFILIATE LINKS
+     * ==========================================================
+     *
+     * Add new affiliate links like:
+     *
+     * example: "https://example.com/affiliate"
+     *
+     * Then access:
+     *
+     * https://hostingercoupon.net/go.html?id=example
+     */
 
-const links = {
+    const links = Object.freeze({
+        hostinger: "https://www.hostg.xyz/SHEtR"
+    });
 
-    hostinger: "https://www.hostg.xyz/SHEtR"
+    /*
+     * ==========================================================
+     * DOM ELEMENTS
+     * ==========================================================
+     */
 
-};
+    const loader = document.getElementById("loader");
+    const title = document.getElementById("title");
+    const message = document.getElementById("message");
+    const status = document.getElementById("status");
 
-/* ==========================================================
-   REDIRECT
-   ========================================================== */
+    /*
+     * ==========================================================
+     * GET AFFILIATE ID
+     * ==========================================================
+     */
 
-const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(window.location.search);
 
-const id = params.get("id");
+    const id = (params.get("id") || "")
+        .trim()
+        .toLowerCase();
 
-if (id && links[id]) {
+    /*
+     * ==========================================================
+     * REDIRECT
+     * ==========================================================
+     */
 
-    document.getElementById("status").textContent = "Opening: " + id;
+    const destination = links[id];
 
-    setTimeout(function () {
+    if (destination) {
 
-        // Client-side redirect
-        window.location.replace(links[id]);
+        status.textContent = `Opening: ${id}`;
 
-    }, 1000);
+        /*
+         * Small delay so the redirect message is actually visible.
+         * 500ms is generally enough without unnecessarily slowing
+         * the affiliate journey.
+         */
 
-} else {
+        window.setTimeout(() => {
+            window.location.replace(destination);
+        }, 500);
 
-    document.getElementById("loader").style.display = "none";
+    } else {
 
-    document.getElementById("title").textContent = "404";
+        loader.hidden = true;
 
-    document.getElementById("message").textContent = "Affiliate link not found.";
+        title.textContent = "404";
 
-    document.getElementById("status").innerHTML =
-        '<span class="error">Invalid or missing affiliate ID.</span>';
+        message.textContent = "Affiliate link not found.";
 
-}
+        status.innerHTML =
+            '<span class="error">Invalid or missing affiliate ID.</span>';
+    }
 
+})();
 </script>
 
 </body>
