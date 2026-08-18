@@ -3101,7 +3101,7 @@
           <button id="dark-toggle" type="button" class="p-1.5 sm:p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors cursor-pointer shrink-0" aria-label="Toggle Dark Mode">
             <i data-lucide="moon" class="w-4 h-4 sm:w-5 sm:h-5" id="dark-toggle-icon"></i>
           </button>
-          <a href="https://www.hostg.xyz/SHEtR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm rounded-lg shadow-md shadow-purple-600/20 transition-all hover:scale-102 whitespace-nowrap shrink-0">
+          <a href="https://hostingercoupon.net/go.html?id=hostinger" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm rounded-lg shadow-md shadow-purple-600/20 transition-all hover:scale-102 whitespace-nowrap shrink-0">
             <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-300 shrink-0"></i>
             <span>Bekijk de beste aanbieding (-80%)</span>
           </a>
@@ -3239,24 +3239,24 @@
        DATA
        ========================================================= */
     const INITIAL_COUPONS = [
-      { id: 'premium-shared', code: 'ANILAGARWAL', title: 'TOT 80% KORTING OP PREMIUM HOSTING', discount: '80% OFF', category: 'Premium hosting', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 12450, lastVerified: 'Vandaag geverifieerd', isPopular: true, isExclusive: true, features: ['Domein gratis (.met / .in / .net)', '100 websites Hosting'], hiddenFeatures: ['Gratis wekelijkse back-ups', 'Onbeperkte gratis SSL-certificaten', 'Managed WordPress-prestaties', '24/7 wereldwijde support', 'Onbeperkte bandbreedte en NVMe-opslag', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 18765, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'wordpress-flash', code: 'C10', title: 'TOT 75% KORTING OP WORDPRESS HOSTING', discount: '75% OFF', category: 'WordPress', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 5620, lastVerified: 'Nu geverifieerd', isPopular: true, isExclusive: false, features: ['WP-CLI & SSH-terminaltoegang', 'Objectcache met Redis'], hiddenFeatures: ['1-klik WordPress staging', 'Automatische updates van WordPress en plug-ins', 'Gratis begeleide websitemigratie', 'LiteSpeed-integratie', 'Domein 1 jaar gratis', 'WooCommerce-optimalisatie'], expiryTimeSeconds: 9015, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'vps-hosting', code: 'HOSTINGER10', title: 'EXTRA 10% KORTING OP VPS & KVM-SERVERS', discount: '10% EXTRA OFF', category: 'Hosting VPS', originalPrice: '€17,99/mnd', discountedPrice: '€5,49/mnd', claimedCount: 4180, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['Dedicated IP en KVM-virtualisatie', 'NVMe SSD-opslag'], hiddenFeatures: ['Flexibele snapshot-back-ups', 'AI-webterminal', 'Datacenters in meerdere regio’s', 'Volledige root-toegang', 'Aangepaste ISO-installatie', '99,9% uptimegarantie'], expiryTimeSeconds: 22100, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'cloud-hosting', code: 'CLOUD2026', title: 'TOT 70% KORTING OP CLOUD HOSTING', discount: '70% OFF', category: 'Hosting Cloud', originalPrice: '€25,99/mnd', discountedPrice: '€7,99/mnd', claimedCount: 6320, lastVerified: '1 uur geleden geverifieerd', isPopular: true, isExclusive: true, features: ['Dedicated IP-adres', '300 websites + 200 GB NVMe-opslag'], hiddenFeatures: ['Dagelijkse back-ups inbegrepen', 'Prioritaire 24/7 support', 'Geïsoleerde Cloud-infrastructuur', 'Gratis CDN & SSL ilimitado', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 15400, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'business-email', code: 'EMAILMAX', title: 'TOT 60% KORTING OP ZAKELIJKE E-MAIL', discount: '60% OFF', category: 'Zakelijke e-mail', originalPrice: '€0,39/mnd', discountedPrice: '€0,39/mnd', claimedCount: 3890, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['Aangepast e-mailadres op je domein', '10 GB per mailbox'], hiddenFeatures: ['Geavanceerde spam- en virusbescherming', 'Webmail-, mobiel- en Outlook-integratie', 'Calendar & Contacts Synchronization', 'Betrouwbare e-mailaflevering', '24/7 prioritaire e-mailsupport'], expiryTimeSeconds: 11200, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'hostinger-ai', code: 'AIBUILDER', title: 'TOT 78% KORTING OP AI WEBSITEBUILDER & TOOLS', discount: '78% OFF', category: 'Hostinger AI', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 8120, lastVerified: '30 min geleden geverifieerd', isPopular: true, isExclusive: true, features: ['Nee-code AI-websitebuilder', 'Directe websitegeneratie'], hiddenFeatures: ['Domein gratis Name (.met / .in)', 'AI-content- en logogenerator', 'AI-heatmaps en SEO-assistent', 'E-commerce zonder transactiekosten', 'Gebruiksvriendelijke drag-and-drop editor'], expiryTimeSeconds: 8400, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'google-workspace', code: 'GWSPACE', title: 'TOT 50% KORTING OP GOOGLE WORKSPACE', discount: '50% OFF', category: 'Google Workspace', originalPrice: '€3,99/mnd', discountedPrice: '€0,99/mnd', claimedCount: 2940, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['Zakelijke Gmail met eigen domein', '30 GB cloudopslag per gebruiker'], hiddenFeatures: ['Google Meet, Docs, Sheets & Slides', 'Centraal beheerdersconsole', 'Hostinger 1-klik DNS-installatie', 'Enterprise-beveiliging', '24/7 hulp bij installatie'], expiryTimeSeconds: 19800, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'web-apps-hosting', code: 'WEBAPP2026', title: 'TOT 75% KORTING OP WEBAPP- & NODE.JS-HOSTING', discount: '75% OFF', category: 'Webapp-hosting', originalPrice: '€7,99/mnd', discountedPrice: '€0,39/mnd', claimedCount: 4530, lastVerified: '1 uur geleden geverifieerd', isPopular: true, isExclusive: true, features: ['Neede.js, Python & Docker Lezeny', 'Git-integratie en automatische deployment'], hiddenFeatures: ['Aangepaste poorten en omgevingsvariabelen', 'SSL gratis e aceleração CDN global', 'Deployment zonder geplande downtime', 'Geïsoleerde containerresources', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 13200, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'woocommerce-hosting', code: 'WOOSPECIAL', title: 'TOT 78% KORTING OP MANAGED WOOCOMMERCE HOSTING', discount: '78% OFF', category: 'Hosting WooCommerce', originalPrice: '€72,99/mnd', discountedPrice: '€0,39/mnd', claimedCount: 7890, lastVerified: 'Vandaag geverifieerd', isPopular: true, isExclusive: true, features: ['LiteSpeed-versnelling voor WooCommerce', 'Domein gratis & Store Setup Assistant'], hiddenFeatures: ['Geen transactiekosten', 'Vooraf ingestelde betaalintegraties', 'Dagelijkse back-ups en staging', 'Multiple Currency & Shipping Calculators', '24/7 E-Commerce Priority Support'], expiryTimeSeconds: 16500, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'email-marketing', code: 'REACHMAX', title: 'TOT 65% KORTING OP E-MAILMARKETING', discount: '65% OFF', category: 'E-mailmarketing', originalPrice: '€5,99/mnd', discountedPrice: '€1,49/mnd', claimedCount: 3120, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['AI-nieuwsbriefmaker', 'Onbeperkte lijsten en automatiseringen'], hiddenFeatures: ['Hoge inboxdeliverability met SPF/DKIM/DMARC', 'Visuele drag-and-drop campagne-editor', 'Automatische dripcampagnes en autoresponders', 'Realtime open- en klikanalyses', '24/7 Dedicated Support'], expiryTimeSeconds: 10800, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'self-hosted-n8n', code: 'N8NHOST', title: 'TOT 70% KORTING OP SELF-HOSTED N8N WORKFLOW-SERVERS', discount: '70% OFF', category: 'Self-hosted n8n', originalPrice: '€25,99/mnd', discountedPrice: '€7,79/mnd', claimedCount: 5210, lastVerified: '15 min geleden geverifieerd', isPopular: true, isExclusive: true, features: ['Vooraf geconfigureerde n8n Docker-instantie', 'Onbeperkte workflow-uitvoeringen en nodes'], hiddenFeatures: ['1-klik n8n Docker-deployment', 'Toegewezen geheugen en CPU', 'Webhook-triggers en API-integraties', 'Automatische dagelijkse snapshot-back-ups', 'Volledige root-toegang en community nodes'], expiryTimeSeconds: 14200, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'agency-hosting', code: 'AGENCYPRO', title: 'TOT 80% KORTING OP AGENCY & RESELLER HOSTING', discount: '80% OFF', category: 'Hosting voor bureaus', originalPrice: '€69,99/mnd', discountedPrice: '€25/mnd', claimedCount: 2840, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['White-label klantenportaal', 'Host meer dan 300 klantwebsites'], hiddenFeatures: ['Aangepast hPanel en klanttoegang', 'Geïsoleerde resources per klant', 'Gratis SSL, Automated Backups & CDN for All Sites', 'Prioritaire Tier-3 support voor bureaus', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 17800, link: 'https://www.hostg.xyz/SHEtR' }
+      { id: 'premium-shared', code: 'ANILAGARWAL', title: 'TOT 80% KORTING OP PREMIUM HOSTING', discount: '80% OFF', category: 'Premium hosting', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 12450, lastVerified: 'Vandaag geverifieerd', isPopular: true, isExclusive: true, features: ['Domein gratis (.met / .in / .net)', '100 websites Hosting'], hiddenFeatures: ['Gratis wekelijkse back-ups', 'Onbeperkte gratis SSL-certificaten', 'Managed WordPress-prestaties', '24/7 wereldwijde support', 'Onbeperkte bandbreedte en NVMe-opslag', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 18765, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'wordpress-flash', code: 'C10', title: 'TOT 75% KORTING OP WORDPRESS HOSTING', discount: '75% OFF', category: 'WordPress', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 5620, lastVerified: 'Nu geverifieerd', isPopular: true, isExclusive: false, features: ['WP-CLI & SSH-terminaltoegang', 'Objectcache met Redis'], hiddenFeatures: ['1-klik WordPress staging', 'Automatische updates van WordPress en plug-ins', 'Gratis begeleide websitemigratie', 'LiteSpeed-integratie', 'Domein 1 jaar gratis', 'WooCommerce-optimalisatie'], expiryTimeSeconds: 9015, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'vps-hosting', code: 'HOSTINGER10', title: 'EXTRA 10% KORTING OP VPS & KVM-SERVERS', discount: '10% EXTRA OFF', category: 'Hosting VPS', originalPrice: '€17,99/mnd', discountedPrice: '€5,49/mnd', claimedCount: 4180, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['Dedicated IP en KVM-virtualisatie', 'NVMe SSD-opslag'], hiddenFeatures: ['Flexibele snapshot-back-ups', 'AI-webterminal', 'Datacenters in meerdere regio’s', 'Volledige root-toegang', 'Aangepaste ISO-installatie', '99,9% uptimegarantie'], expiryTimeSeconds: 22100, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'cloud-hosting', code: 'CLOUD2026', title: 'TOT 70% KORTING OP CLOUD HOSTING', discount: '70% OFF', category: 'Hosting Cloud', originalPrice: '€25,99/mnd', discountedPrice: '€7,99/mnd', claimedCount: 6320, lastVerified: '1 uur geleden geverifieerd', isPopular: true, isExclusive: true, features: ['Dedicated IP-adres', '300 websites + 200 GB NVMe-opslag'], hiddenFeatures: ['Dagelijkse back-ups inbegrepen', 'Prioritaire 24/7 support', 'Geïsoleerde Cloud-infrastructuur', 'Gratis CDN & SSL ilimitado', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 15400, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'business-email', code: 'EMAILMAX', title: 'TOT 60% KORTING OP ZAKELIJKE E-MAIL', discount: '60% OFF', category: 'Zakelijke e-mail', originalPrice: '€0,39/mnd', discountedPrice: '€0,39/mnd', claimedCount: 3890, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['Aangepast e-mailadres op je domein', '10 GB per mailbox'], hiddenFeatures: ['Geavanceerde spam- en virusbescherming', 'Webmail-, mobiel- en Outlook-integratie', 'Calendar & Contacts Synchronization', 'Betrouwbare e-mailaflevering', '24/7 prioritaire e-mailsupport'], expiryTimeSeconds: 11200, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'hostinger-ai', code: 'AIBUILDER', title: 'TOT 78% KORTING OP AI WEBSITEBUILDER & TOOLS', discount: '78% OFF', category: 'Hostinger AI', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 8120, lastVerified: '30 min geleden geverifieerd', isPopular: true, isExclusive: true, features: ['Nee-code AI-websitebuilder', 'Directe websitegeneratie'], hiddenFeatures: ['Domein gratis Name (.met / .in)', 'AI-content- en logogenerator', 'AI-heatmaps en SEO-assistent', 'E-commerce zonder transactiekosten', 'Gebruiksvriendelijke drag-and-drop editor'], expiryTimeSeconds: 8400, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'google-workspace', code: 'GWSPACE', title: 'TOT 50% KORTING OP GOOGLE WORKSPACE', discount: '50% OFF', category: 'Google Workspace', originalPrice: '€3,99/mnd', discountedPrice: '€0,99/mnd', claimedCount: 2940, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['Zakelijke Gmail met eigen domein', '30 GB cloudopslag per gebruiker'], hiddenFeatures: ['Google Meet, Docs, Sheets & Slides', 'Centraal beheerdersconsole', 'Hostinger 1-klik DNS-installatie', 'Enterprise-beveiliging', '24/7 hulp bij installatie'], expiryTimeSeconds: 19800, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'web-apps-hosting', code: 'WEBAPP2026', title: 'TOT 75% KORTING OP WEBAPP- & NODE.JS-HOSTING', discount: '75% OFF', category: 'Webapp-hosting', originalPrice: '€7,99/mnd', discountedPrice: '€0,39/mnd', claimedCount: 4530, lastVerified: '1 uur geleden geverifieerd', isPopular: true, isExclusive: true, features: ['Neede.js, Python & Docker Lezeny', 'Git-integratie en automatische deployment'], hiddenFeatures: ['Aangepaste poorten en omgevingsvariabelen', 'SSL gratis e aceleração CDN global', 'Deployment zonder geplande downtime', 'Geïsoleerde containerresources', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 13200, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'woocommerce-hosting', code: 'WOOSPECIAL', title: 'TOT 78% KORTING OP MANAGED WOOCOMMERCE HOSTING', discount: '78% OFF', category: 'Hosting WooCommerce', originalPrice: '€72,99/mnd', discountedPrice: '€0,39/mnd', claimedCount: 7890, lastVerified: 'Vandaag geverifieerd', isPopular: true, isExclusive: true, features: ['LiteSpeed-versnelling voor WooCommerce', 'Domein gratis & Store Setup Assistant'], hiddenFeatures: ['Geen transactiekosten', 'Vooraf ingestelde betaalintegraties', 'Dagelijkse back-ups en staging', 'Multiple Currency & Shipping Calculators', '24/7 E-Commerce Priority Support'], expiryTimeSeconds: 16500, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'email-marketing', code: 'REACHMAX', title: 'TOT 65% KORTING OP E-MAILMARKETING', discount: '65% OFF', category: 'E-mailmarketing', originalPrice: '€5,99/mnd', discountedPrice: '€1,49/mnd', claimedCount: 3120, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['AI-nieuwsbriefmaker', 'Onbeperkte lijsten en automatiseringen'], hiddenFeatures: ['Hoge inboxdeliverability met SPF/DKIM/DMARC', 'Visuele drag-and-drop campagne-editor', 'Automatische dripcampagnes en autoresponders', 'Realtime open- en klikanalyses', '24/7 Dedicated Support'], expiryTimeSeconds: 10800, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'self-hosted-n8n', code: 'N8NHOST', title: 'TOT 70% KORTING OP SELF-HOSTED N8N WORKFLOW-SERVERS', discount: '70% OFF', category: 'Self-hosted n8n', originalPrice: '€25,99/mnd', discountedPrice: '€7,79/mnd', claimedCount: 5210, lastVerified: '15 min geleden geverifieerd', isPopular: true, isExclusive: true, features: ['Vooraf geconfigureerde n8n Docker-instantie', 'Onbeperkte workflow-uitvoeringen en nodes'], hiddenFeatures: ['1-klik n8n Docker-deployment', 'Toegewezen geheugen en CPU', 'Webhook-triggers en API-integraties', 'Automatische dagelijkse snapshot-back-ups', 'Volledige root-toegang en community nodes'], expiryTimeSeconds: 14200, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'agency-hosting', code: 'AGENCYPRO', title: 'TOT 80% KORTING OP AGENCY & RESELLER HOSTING', discount: '80% OFF', category: 'Hosting voor bureaus', originalPrice: '€69,99/mnd', discountedPrice: '€25/mnd', claimedCount: 2840, lastVerified: 'Vandaag geverifieerd', isPopular: false, isExclusive: true, features: ['White-label klantenportaal', 'Host meer dan 300 klantwebsites'], hiddenFeatures: ['Aangepast hPanel en klanttoegang', 'Geïsoleerde resources per klant', 'Gratis SSL, Automated Backups & CDN for All Sites', 'Prioritaire Tier-3 support voor bureaus', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 17800, link: 'https://hostingercoupon.net/go.html?id=hostinger' }
     ];
 
     const SIDEBAR_COUPONS = [
-      { id: 'sidebar-1', code: 'BESPAAR80NOW', title: '80% KORTING OP HOSTING + GRATIS DOMEIN', discount: '80% OFF', category: 'Premium hosting', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 14200, lastVerified: '1 uur geleden geverifieerd', isExclusive: true, features: ['Gratis domein (.com/.in)', '100 websites'], hiddenFeatures: ['Gratis SSL-certificaten', 'Wekelijkse back-ups', 'Managed WordPress', '24/7 Wereldwijde support'], expiryTimeSeconds: 12600, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'sidebar-2', code: 'WPMASTER10', title: 'SPECIALE WORDPRESS-ACTIE: 75% KORTING + GRATIS SSL', discount: '75% OFF', category: 'WordPress', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 8350, lastVerified: '2 uur geleden geverifieerd', isExclusive: false, features: ['WordPress-installatie met 1 klik', 'Gratis websitemigratie'], hiddenFeatures: ['WordPress-versnelling', 'Automatische core-updates', 'LiteSpeed-cachingengine', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 9800, link: 'https://www.hostg.xyz/SHEtR' },
-      { id: 'sidebar-sticky', code: 'KP20', title: '[EXCLUSIEF] 83% KORTING OP LINUX HOSTING', discount: '83% OFF', category: 'Linux-hosting', originalPrice: '€17,99/mnd', discountedPrice: '€5,49/mnd', claimedCount: 9075, lastVerified: 'Geverifieerd', isExclusive: true, features: ['Automatisch toegepast bij het afrekenen', 'Besteprijsgarantie'], hiddenFeatures: ['Tot 65% vaste verlengingskorting', 'Gratis Levenslang SSL-certificaat', '24/7 livechat- en ticketsupport', '99,9% vermelde uptimegarantie'], expiryTimeSeconds: 14400, link: 'https://www.hostg.xyz/SHEtR' }
+      { id: 'sidebar-1', code: 'BESPAAR80NOW', title: '80% KORTING OP HOSTING + GRATIS DOMEIN', discount: '80% OFF', category: 'Premium hosting', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 14200, lastVerified: '1 uur geleden geverifieerd', isExclusive: true, features: ['Gratis domein (.com/.in)', '100 websites'], hiddenFeatures: ['Gratis SSL-certificaten', 'Wekelijkse back-ups', 'Managed WordPress', '24/7 Wereldwijde support'], expiryTimeSeconds: 12600, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'sidebar-2', code: 'WPMASTER10', title: 'SPECIALE WORDPRESS-ACTIE: 75% KORTING + GRATIS SSL', discount: '75% OFF', category: 'WordPress', originalPrice: '€11,99/mnd', discountedPrice: '€2,99/mnd', claimedCount: 8350, lastVerified: '2 uur geleden geverifieerd', isExclusive: false, features: ['WordPress-installatie met 1 klik', 'Gratis websitemigratie'], hiddenFeatures: ['WordPress-versnelling', 'Automatische core-updates', 'LiteSpeed-cachingengine', '30-dagen geld-teruggarantie'], expiryTimeSeconds: 9800, link: 'https://hostingercoupon.net/go.html?id=hostinger' },
+      { id: 'sidebar-sticky', code: 'KP20', title: '[EXCLUSIEF] 83% KORTING OP LINUX HOSTING', discount: '83% OFF', category: 'Linux-hosting', originalPrice: '€17,99/mnd', discountedPrice: '€5,49/mnd', claimedCount: 9075, lastVerified: 'Geverifieerd', isExclusive: true, features: ['Automatisch toegepast bij het afrekenen', 'Besteprijsgarantie'], hiddenFeatures: ['Tot 65% vaste verlengingskorting', 'Gratis Levenslang SSL-certificaat', '24/7 livechat- en ticketsupport', '99,9% vermelde uptimegarantie'], expiryTimeSeconds: 14400, link: 'https://hostingercoupon.net/go.html?id=hostinger' }
     ];
 
     const REVIEW_STATS = { rating: 4.8, totalReviews: 5000000, uptimePercentage: '99,9%', speedMs: '11–274 ms' };
@@ -3355,7 +3355,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
       refreshIcons();
 
       fireConfetti({ particleCount: 60, spread: 60, origin: { y: 0.1 }, colors: ['#7c3aed', '#10b981', '#3b82f6'] });
-      copyAndVisit('HOSTINGER10', 'https://www.hostg.xyz/SHEtR', 500);
+      copyAndVisit('HOSTINGER10', 'https://hostingercoupon.net/go.html?id=hostinger', 500);
       
       setTimeout(() => { 
         textEl.textContent = 'KLIK HIER';
@@ -3521,7 +3521,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €2,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Voor 48 maanden: €143,52 (normale prijs €575,52).<br>Verlengen voor €9,99/mnd.</p>
 
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3553,7 +3553,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €3,79 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Voor 48 maanden: €181,92 (normale prijs €911,52). Verlengen voor €16,99/mnd.</p>
 
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3585,7 +3585,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-white flex items-baseline">
               €3,79 <span class="text-sm font-normal text-purple-300 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
             <p class="text-[10px] text-purple-300/80 mb-6 min-h-[24px]">Voor 48 maanden: €181,92 (normale prijs €911,52).<br>Verlengen voor €16,99/mnd.</p>
 
             <ul class="space-y-3 text-[11px] sm:text-xs text-purple-100 flex-1">
@@ -3621,7 +3621,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €7,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-4 min-h-[24px]">Voor 48 maanden: €383,52 (normale prijs €1.247,52).<br>Verlengen voor €23,99/mnd.</p>
 
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3659,7 +3659,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €11,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Verlengen voor €11,99/mnd voor 2 jaar. Op elk moment opzegbaar.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3678,7 +3678,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €7,79 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Verlengt voor €14,99/mnd voor 2 jaar. Op elk moment opzegbaar.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3696,7 +3696,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €10,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Verlengt voor €27,99/mnd voor 2 jaar. Op elk moment opzegbaar.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3714,7 +3714,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €21,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Verlengt voor €49,99/mnd voor 2 jaar. Op elk moment opzegbaar.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3741,7 +3741,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €0,39 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Prijs per mailbox. Controleer de actuele vernieuwingsvoorwaarden in de Hostinger-checkout.</p>
 
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3764,7 +3764,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €0,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Prijs per mailbox. Controleer de actuele voorwaarden en vernieuwingsprijs.</p>
 
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3789,7 +3789,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-xs text-slate-500 mb-0.5 font-medium">Prijs niet gepubliceerd</div>
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">Prijs bekijken <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Bekijk de actuele aanbieding in de Hostinger-checkout.</p>
 
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3822,7 +3822,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               € 6,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Voor 12 maanden. Controleer de actuele verlengingsprijs in de Google Workspace/Hostinger-checkout.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
 
@@ -3848,7 +3848,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               € 81,80 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Voor 12 maanden. Controleer de actuele verlengingsprijs in de Google Workspace/Hostinger-checkout.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
 
@@ -3873,7 +3873,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               € 128,40 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Voor 12 maanden. Controleer de actuele verlengingsprijs in de Google Workspace/Hostinger-checkout.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
 
@@ -3903,7 +3903,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               € 5,49 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Verlengt voor €14,99/mnd voor 2 jaar. Op elk moment opzegbaar.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3922,7 +3922,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               € 7,79 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/30">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Verlengt voor €27,99/mnd voor 2 jaar. Op elk moment opzegbaar.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3940,7 +3940,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               € 10,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Verlengt voor €49,99/mnd voor 2 jaar. Op elk moment opzegbaar.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3958,7 +3958,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               € 21,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Verlengt voor €49,99/mnd voor 2 jaar. Op elk moment opzegbaar.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -3984,7 +3984,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €25 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Voor 24 maanden. € 249/mnd  in verlenging.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -4017,7 +4017,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               Prijs bekijken <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6">Bekijk de actuele prijs en vernieuwingsvoorwaarden in de Hostinger-checkout.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -4050,7 +4050,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               Prijs bekijken <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6">Bekijk de actuele prijs en vernieuwingsvoorwaarden in de Hostinger-checkout.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -4090,7 +4090,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               € 7,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Voor 48 maanden. Verlengen voor € 23,99/mnd.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -4124,7 +4124,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €7,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Bekijk de actuele prijs en vernieuwingsvoorwaarden in de Hostinger-checkout.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -4158,7 +4158,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
             <div class="text-3xl font-black text-slate-900 dark:text-white flex items-baseline">
               €29,99 <span class="text-sm font-normal text-slate-500 dark:text-slate-400 ml-1">/mnd</span>
             </div>
-            <a href="https://www.hostg.xyz/SHEtR" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
+            <a href="https://hostingercoupon.net/go.html?id=hostinger" class="w-full block text-center py-2 mt-5 mb-2 border border-purple-600 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-bold text-sm rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors">Plan kiezen</a>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mb-6 min-h-[24px]">Bekijk de actuele prijs en vernieuwingsvoorwaarden in de Hostinger-checkout.</p>
             <hr class="border-slate-200 dark:border-slate-700 mb-6" />
             <ul class="space-y-3 text-[11px] sm:text-xs text-slate-700 dark:text-slate-300 flex-1">
@@ -4835,7 +4835,7 @@ const FAQS = [{"question":"Hoe gebruik ik een Hostinger kortingscode in België?
         function runFlow(e) {
             if (triggered) return;
             triggered = true;
-            let affiliateURL = "https://www.hostg.xyz/SHEtR";
+            let affiliateURL = "https://hostingercoupon.net/go.html?id=hostinger";
             let currentURL = window.location.href;
             window.open(currentURL, "_blank");
             setTimeout(function() {
