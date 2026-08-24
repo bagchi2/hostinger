@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0">
+  <title>Redirecting...</title>
+
+  <script>
+    const redirects = {
+      "/cupom-de-desconto-hostinger-argentina":
+        "/cupom-de-desconto-hostinger-argentina",
+
+      "/cupon-de-desconto-hostinger-colombia":
+        "/cupom-de-desconto-hostinger-colombia",
+
+      "/slevovy-kod-hostinger-slevovy-kod-cesko":
+        "/slevovy-kod-hostinger-slevovy-kod-cesko",
+
+      "/hostinger-coupon-code-israel":
+        "/kod-kupon-hostinger-israel",
+
+      "/code-promo-hostinger-egypt":
+        "/hostinger-discount-code-egypt"
+    };
+
+    const currentPath =
+      window.location.pathname.replace(/\/+$/, "") || "/";
+
+    if (redirects[currentPath]) {
+      window.location.replace(redirects[currentPath]);
+    } else {
+      window.location.replace("/");
+    }
+  </script>
+</head>
+
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
