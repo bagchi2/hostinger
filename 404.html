@@ -2,39 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="robots" content="noindex">
-  <meta http-equiv="refresh" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>Redirecting...</title>
-
   <script>
-    const redirects = {
-      "/cupom-de-desconto-hostinger-argentina":
-        "/cupom-de-desconto-hostinger-argentina",
+    (function () {
+      const redirects = {
+        "/cupom-de-desconto-hostinger-argentina":
+          "/cupom-de-descuento-hostinger-argentina",
 
-      "/cupon-de-desconto-hostinger-colombia":
-        "/cupom-de-desconto-hostinger-colombia",
+        "/cupon-de-desconto-hostinger-colombia":
+          "/cupon-de-descuento-hostinger-colombia",
 
-      "/slevovy-kod-hostinger-slevovy-kod-cesko":
-        "/slevovy-kod-hostinger-slevovy-kod-cesko",
+        "/slevovy-kod-hostinger-slevovy-kod-cesko":
+          "/slevovy-kod-hostinger-slevovy-kod-cesko-czech",
 
-      "/hostinger-coupon-code-israel":
-        "/kod-kupon-hostinger-israel",
+        "/hostinger-coupon-code-israel":
+          "/kod-kupon-hostinger-israel",
 
-      "/code-promo-hostinger-egypt":
-        "/hostinger-discount-code-egypt"
-    };
+        "/code-promo-hostinger-egypt":
+          "/hostinger-discount-code-egypt"
+      };
 
-    const currentPath =
-      window.location.pathname.replace(/\/+$/, "") || "/";
+      const path = window.location.pathname.replace(/\/+$/, "") || "/";
+      const target = redirects[path];
 
-    if (redirects[currentPath]) {
-      window.location.replace(redirects[currentPath]);
-    } else {
-      window.location.replace("/");
-    }
+      if (target) {
+        // Preserve query string and hash.
+        window.location.replace(target + window.location.search + window.location.hash);
+      } else {
+        // Normal unknown 404 URLs go to the homepage.
+        window.location.replace("/");
+      }
+    })();
   </script>
 </head>
-
 <body>
   <p>Redirecting...</p>
 </body>
